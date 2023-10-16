@@ -2,7 +2,6 @@ package Stack
 
 import (
 	"testing"
-    "time"
 )
 
 func Test(t *testing.T) {
