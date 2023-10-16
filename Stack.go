@@ -59,11 +59,11 @@ func (this *Stack) Pop() interface{} {
 // Add a new item to the stack
 func (this *Stack) Push(value interface{}) {
 	this.mu.Lock()
+    defer this.mu.Unlock()
 
 	n := &node{value, this.top}
 	this.top = n
 	this.length++
 	this.Cond.Signal()
-    this.mu.Unlock()
 }
 
